@@ -63,7 +63,8 @@ public class RegistrationScreen {
             String email = emailField.getText().trim();
             String password = passwordField.getText().trim();
             String mobile = mobileField.getText().trim();
-            String userType = userTypeBox.getValue();
+            String userType = userTypeBox.getValue().toLowerCase();
+
 
             if (name.isEmpty() || email.isEmpty() || password.isEmpty() || mobile.isEmpty() || userType == null) {
                 messageLabel.setText("❌ Please fill all fields.");
@@ -71,13 +72,13 @@ public class RegistrationScreen {
             }
 
             try (Connection conn = DBConnection.getConnection()) {
-                String sql = "INSERT INTO users (name, email, password,mobile, user_type) VALUES (?, ?, ?,?, ?)";
+                String sql = "INSERT INTO users (name, email, password, user_type,mobile) VALUES (?, ?, ?,?, ?)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.setString(1, name);
                 stmt.setString(2, email);
                 stmt.setString(3, password);
-                stmt.setString(4, mobile);
-                stmt.setString(5, userType);
+                stmt.setString(4, userType);
+                stmt.setString(5, mobile);
                 stmt.executeUpdate();
 
                 messageLabel.setText("✅ Registered successfully! Please login.");
