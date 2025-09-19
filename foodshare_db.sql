@@ -1,13 +1,17 @@
 USE foodshare_db;
 
 -- Users table (Donors and Volunteers)
+DROP TABLE IF EXISTS users;
+
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     password VARCHAR(100) NOT NULL,
+    mobile VARCHAR(15) NOT NULL,
     user_type ENUM('donor', 'volunteer') NOT NULL
 );
+
 
 -- Donations table
 CREATE TABLE donations (
