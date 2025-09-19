@@ -22,5 +22,7 @@ CREATE TABLE donations (
     pickup_location VARCHAR(255),
     status ENUM('pending', 'picked') DEFAULT 'pending',
     donation_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    volunteer_id INT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (volunteer_id) REFERENCES users(id)
 );
