@@ -41,12 +41,12 @@ Separation of concerns is maintained between:
 
 ##  Key Features
 
-✔ Secure user registration and login  
-✔ Role-based dashboards  
-✔ Add and manage food donations  
-✔ Volunteer interest tracking  
-✔ Donation lifecycle status management  
-✔ Database-driven workflows using SQL queries  
+- Secure user registration and login  
+- Role-based dashboards  
+- Add and manage food donations  
+- Volunteer interest tracking  
+- Donation lifecycle status management  
+- Database-driven workflows using SQL queries  
 
 ---
 
@@ -100,3 +100,4 @@ Key relationships:
 Gauri Shinde  
 Computer Engineering Student  
 Backend Development Enthusiast
+
